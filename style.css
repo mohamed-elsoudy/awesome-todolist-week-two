@@ -1,0 +1,170 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+:root {
+    --yello: #f7ca05;
+    --green: #98ed41;
+    --bink: #fe5b8e;
+    --blue: #06d6f0;
+    --white: #f4f4f2;
+    --border: #051d39;
+}
+
+/* main container */
+.container {
+    width: 500px;
+    height: calc(100vh - 100px);
+    background-color: var(--white);
+    border: 4px solid var(--border);
+    margin: auto;
+    margin-top: calc((100vh - calc(100vh - 100px)) / 2);
+    border-radius: 18px;
+    overflow: hidden;
+}
+/* main container */
+
+/* header */
+.header {
+    background-color: var(--yello);
+    font-size: 25px;
+    height: 70px;
+    padding: 10px;
+    border-bottom: 4px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header .count {
+    color: white;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bink);
+    border-radius: 50%;
+    border: 4px solid var(--border);
+}
+/* end header */
+
+/* tasks */
+.tasks {
+    overflow-y: auto;
+    height: calc(100% - 140px);
+}
+.task {
+    width: calc(100% - 40px);
+    height: 100px;
+    background-color: var(--blue);
+    border: 4px solid var(--border);
+    margin: 20px auto;
+    border-radius: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 1.5s;
+}
+.removed {
+    color: var(--bink);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transform: translateY(-240px);
+}
+.task.done {
+    background-color: var(--bink);
+}
+.task p {
+    font-size: 20px;
+    transition: .3s;
+}
+.task p.done{
+    transform: rotate(360deg);
+    text-decoration: line-through;
+    color: white;
+    font-weight: bold;
+}
+.task .control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.task .control span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #051d39;
+    background-color: var(--bink);
+    width: 50px;
+    height: 20px;
+    border-radius: 15px;
+    border: 2px solid var(--border);
+    cursor: pointer;
+}
+.task .control span:first-child {
+    width: 20px;
+}
+.task .control span:nth-child(2) {
+    background-color: var(--green);
+}
+.task .control span:last-child {
+    background-color: var(--yello);
+}
+/* end tasks */
+
+/* footer */
+footer {
+    background-color: var(--yello);
+    font-size: 25px;
+    height: 70px;
+    padding: 10px;
+    border-top: 4px solid var(--border);
+}
+footer div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+footer input {
+    background-color: var(--yello);
+    border: none;
+    border-radius: 28px;
+    height: 100%;
+    flex: 2;
+    caret-color: var(--bink);
+    outline: none;
+    padding: 8px;
+}
+footer input::placeholder {
+    color: white;
+    font-size: 15px;
+}
+footer button {
+    background-color: var(--bink);
+    border: 2px solid var(--border);
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* end footer */
